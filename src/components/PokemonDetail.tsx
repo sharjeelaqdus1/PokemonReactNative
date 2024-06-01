@@ -1,30 +1,35 @@
 // components/PokemonDetail.tsx
 import React from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, Text} from 'react-native';
 
 import {extractPokemonUrlSegment} from '../helpers/common';
 import usePokemonDetail from '../hooks/usePokemonDetail';
 import Header from './Header';
 import DetailElement from './DetailElement';
 import ShouldRender from './ShouldRender';
+import DefaultError from './DefaultError';
 
 interface PokemonDetailProps {
   pokemonId: string;
 }
 
 const PokemonDetail: React.FC<PokemonDetailProps> = ({pokemonId}) => {
-  const {pokemonDetails} = usePokemonDetail(
+  const {pokemonDetails, error, isLoading} = usePokemonDetail(
     extractPokemonUrlSegment(pokemonId),
   );
   const {name, height, weight, types, sprites} = pokemonDetails || {};
-  //   console.log('pokemon', pokemon);
-  //   if (isLoading) {
-  //     return <Text>Loading...</Text>;
-  //   }
 
-  //   if (error) {
-  //     return <Text>Error: {error?.message}</Text>;
-  //   }
+  if (isLoading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (error) {
+    if ('status' in error) {
+      return <DefaultError message={error?.status} />;
+    } else {
+      return <DefaultError message={'Failed to load'} />;
+    }
+  }
 
   //   if (!pokemon) {
   //     return <Text>No Pokemon data</Text>;
@@ -41,22 +46,23 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({pokemonId}) => {
           />
         </ShouldRender>
         <ShouldRender condition={!!name}>
-          <DetailElement label="Name" value={name} />
           <View style={styles.separator} />
+          <DetailElement label="Name" value={name} />
         </ShouldRender>
         <ShouldRender condition={!!height}>
+          <View style={styles.separator} />
           <DetailElement label="Height" value={height + ' cm'} />
-          <View style={styles.separator} />
         </ShouldRender>
         <ShouldRender condition={!!weight}>
+          <View style={styles.separator} />
           <DetailElement label="Weight" value={weight + ' kg'} />
-          <View style={styles.separator} />
         </ShouldRender>
         <ShouldRender condition={!!weight}>
-          <DetailElement label="Types" value={types} list={true} />
           <View style={styles.separator} />
+          <DetailElement label="Types" value={types} list={true} />
         </ShouldRender>
       </View>
+      <View style={styles.separator2} />
     </View>
   );
 };
@@ -92,6 +98,11 @@ const styles = StyleSheet.create({
   separator: {
     height: 1,
     backgroundColor: '#eee',
+    marginVertical: 8,
+  },
+  separator2: {
+    height: 1,
+    backgroundColor: 'gray',
     marginVertical: 8,
   },
 });

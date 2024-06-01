@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  StatusBar,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../types';
@@ -31,12 +38,12 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     width: '100%',
-    height: Platform.OS === 'ios' ? 44 : 56, // standard height for iOS and Android
-    backgroundColor: '#0000FF', // blue background
+    height: Platform.OS === 'ios' ? 58 : 60, // standard height for iOS and Android
+    backgroundColor: '#447AEE', // blue background
     alignContent: 'center',
     alignItems: 'center', // align text to the left
-    paddingHorizontal: 16, // padding to align text with some margin from left
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0, // add padding for android status bar
+    paddingHorizontal: 16, // padding to align text with some margin from left,
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0, // add padding for android status bar
   },
   headerText: {
     color: '#FFFFFF', // white text

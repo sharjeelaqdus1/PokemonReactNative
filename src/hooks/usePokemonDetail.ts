@@ -3,11 +3,16 @@
 import {useGetPokemonDetailsQuery} from '../services/network';
 
 const usePokemonDetail = (pokemonUrl: string) => {
-  const {data: pokemonDetails, error} = useGetPokemonDetailsQuery(pokemonUrl); // Call the hook directly
+  const {
+    data: pokemonDetails,
+    error,
+    isLoading,
+  } = useGetPokemonDetailsQuery(pokemonUrl); // Call the hook directly
 
   return {
     pokemonDetails,
     error,
+    isLoading,
   };
 };
 
