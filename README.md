@@ -37,16 +37,6 @@ npm run start_url your-api-base-url.com
 ```
 or you can create .env file at root and add the API_URL env variable
 
-Project Structure
-The project follows a modular structure to ensure code separation, clean code, readability, and maintainability. Here's an overview of the directory structure:
-
-src/: Main source code directory
-common/: Common components used throughout the application
-navigation/: React Navigation stacks
-screens/: Screens of the application
-constants/: Constants used across the application
-helpers/: Common helper functions
-types/: Common TypeScript types
 
 # Basic Intsrutions
 
