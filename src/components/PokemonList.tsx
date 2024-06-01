@@ -18,7 +18,7 @@ const PokemonList: React.FC<PokemonListProps> = ({
   onEndReachedThreshold,
 }) => {
   const {pokemonList} = usePokemon();
-  console.log('pokemonList', pokemonList);
+
   const renderItem = ({item}: {item: Pokemon}) => (
     <PokemonListItem item={item} />
   );
@@ -34,6 +34,7 @@ const PokemonList: React.FC<PokemonListProps> = ({
       ItemSeparatorComponent={ListSeparator}
       onEndReached={onEndReached}
       onEndReachedThreshold={onEndReachedThreshold}
+      testID="PokemonList"
     />
   );
 };

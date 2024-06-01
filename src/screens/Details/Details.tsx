@@ -9,7 +9,6 @@ import PokemonDetail from '../../components/PokemonDetail';
 type PokemonDetailProps = NativeStackScreenProps<RootStackParamList, 'Details'>;
 
 const PokemonDetailScreen: React.FC<PokemonDetailProps> = ({route}) => {
-  console.log('printing');
   const {pokemonId} = route.params;
   return (
     <View style={styles.container}>

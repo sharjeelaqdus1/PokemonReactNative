@@ -13,6 +13,20 @@ import {
 import {pokemonApi} from '../services/network';
 import {persistedReducer} from './reducer';
 
+export const setupStore = () => {
+  const store = configureStore({
+    reducer: persistedReducer,
+    middleware: getDefaultMiddleware =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+        immutableCheck: false,
+      }).concat(pokemonApi.middleware),
+  });
+
+  return store;
+};
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware =>

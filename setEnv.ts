@@ -1,4 +1,3 @@
-// setEnv.ts
 const fs = require('fs');
 
 // Read the API URL from command-line arguments

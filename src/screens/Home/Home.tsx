@@ -15,9 +15,8 @@ export type HomeScreenProps = NativeStackScreenProps<
 >;
 
 const HomeScreen: React.FC<HomeScreenProps> = () => {
-  console.log('printing');
   return (
-    <View style={styles.container}>
+    <View testID="home-screen" style={styles.container}>
       <Header title="PokeReact" />
       <PokemonList />
     </View>

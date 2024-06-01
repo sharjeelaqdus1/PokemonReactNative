@@ -24,10 +24,12 @@ const PokemonListItem: React.FC<RenderItemProps> = ({item}) => {
   const {pokemonDetails} = usePokemonDetail(extractPokemonUrlSegment(url));
   const onPress = () =>
     navigation.navigate('Details', {pokemonId: extractPokemonUrlSegment(url)});
-  console.log('pokemonDetails', pokemonDetails);
 
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity
+      testID="navigate-to-details-button"
+      onPress={onPress}
+      style={styles.container}>
       <Image
         source={{uri: getFrontImage(pokemonDetails)}}
         style={styles.image}

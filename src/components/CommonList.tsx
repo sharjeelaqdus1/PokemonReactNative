@@ -13,6 +13,7 @@ type CommonListProps<T> = {
   ItemSeparatorComponent?: React.ComponentType<any> | null;
   onEndReached?: (() => void) | null;
   onEndReachedThreshold?: number | null;
+  testID: string;
 };
 
 function CommonList<T>({
