@@ -26,6 +26,7 @@ The project follows a modular structure to ensure code separation, clean code, r
   - **constants/**: Constants used across the application
   - **helpers/**: Common helper functions
   - **types/**: Common TypeScript types
+  - **hooks/**: Custom hooks
 
 # Preview
 ![Output](https://github.com/sharjeelaqdus1/PokemonReactNative/assets/61380326/5fa13ade-cfa4-41d6-b3bf-da28aae5565b)
