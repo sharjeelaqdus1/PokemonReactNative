@@ -1,6 +1,45 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Pokemon App
 
-# Getting Started
+Welcome to the Pokemon App! This project is a React Native application that allows users to browse a list of Pokemon and view their details.
+
+## Features
+
+- View a list of Pokemon
+- View details of each Pokemon
+
+## Key Concepts Used
+
+- **React Navigation**: Used for navigation between screens in the application.
+- **Redux Toolkit**: Utilized for state management in the application.
+- **Redux Persist**: Used for persisting the Redux store across app restarts.
+- **Custom Hooks**: Implemented custom hooks for managing state and logic.
+- **React Native Query**: Utilized for data fetching and caching in the application.
+
+## Project Structure
+
+The project follows a modular structure to ensure code separation, clean code, readability, and maintainability. Here's an overview of the directory structure:
+
+- **src/**: Main source code directory
+  - **common/**: Common components used throughout the application
+  - **navigation/**: React Navigation stacks
+  - **screens/**: Screens of the application
+  - **constants/**: Constants used across the application
+  - **helpers/**: Common helper functions
+  - **types/**: Common TypeScript types
+  - **hooks/**: Custom hooks
+
+# Preview
+![Output](https://github.com/sharjeelaqdus1/PokemonReactNative/assets/61380326/5fa13ade-cfa4-41d6-b3bf-da28aae5565b)
+
+# Changing API Base URL
+You can change the API base URL by running the following command:
+```bash
+npm run start_url your-api-base-url.com
+```
+or you can create .env file at root and add the API_URL env variable
+
+
+# Basic Intsrutions
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
@@ -60,6 +99,7 @@ Now that you have successfully run the app, let's modify it.
 You've successfully run and modified your React Native App. :partying_face:
 
 ### Now what?
+
 
 - If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
 - If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
