@@ -14,6 +14,7 @@ Welcome to the Pokemon App! This project is a React Native application that allo
 - **Redux Persist**: Used for persisting the Redux store across app restarts.
 - **Custom Hooks**: Implemented custom hooks for managing state and logic.
 - **React Native Query**: Utilized for data fetching and caching in the application.
+- **Unit and Integration test cases**: Ensuring that individual components and their interactions are thoroughly tested, contributing to the overall stability and reliability of the application.
 
 ## Project Structure
 
