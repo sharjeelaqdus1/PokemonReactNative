@@ -38,6 +38,13 @@ npm run start_url your-api-base-url.com
 ```
 or you can create .env file at root and add the API_URL env variable
 
+# Test Coverage Results
+<img width="622" alt="TestCoverage" src="https://github.com/sharjeelaqdus1/PokemonReactNative/assets/61380326/382a431f-2706-41ef-b4a6-8b22a3e516e6">
+
+You can check unit, integration and snapshot test coverage :
+```bash
+npm run test:coverage
+```
 
 # Basic Intsrutions
 
