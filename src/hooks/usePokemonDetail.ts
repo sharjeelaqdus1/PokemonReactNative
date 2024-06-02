@@ -1,5 +1,3 @@
-// src/hooks/usePokemon.ts
-
 import {useGetPokemonDetailsQuery} from '../services/network';
 
 const usePokemonDetail = (pokemonUrl: string) => {

@@ -2,7 +2,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
-// Common Header Component To Keep Code Reusability and Separation
+// Common Separator Component To Keep Code Reusability and Maintainability
 const ListSeparator: React.FC = () => {
   return <View style={styles.separator} />;
 };

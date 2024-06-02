@@ -1,5 +1,3 @@
-// src/components/CommonList.tsx
-
 import React from 'react';
 import {FlatList, ListRenderItem, StyleProp, ViewStyle} from 'react-native';
 
@@ -16,6 +14,9 @@ type CommonListProps<T> = {
   testID: string;
 };
 
+// This common component is designed to display list on home page
+// for pokemon , but in bigger projects we can consume this at multiple places.
+
 function CommonList<T>({
   data,
   renderItem,
@@ -26,6 +27,7 @@ function CommonList<T>({
   ItemSeparatorComponent,
   onEndReached,
   onEndReachedThreshold,
+  testID,
 }: CommonListProps<T>) {
   return (
     <FlatList
@@ -36,8 +38,9 @@ function CommonList<T>({
       ListHeaderComponent={ListHeaderComponent}
       ListFooterComponent={ListFooterComponent}
       ItemSeparatorComponent={ItemSeparatorComponent}
-      onEndReached={onEndReached}
+      onEndReached={onEndReached} // we can use this to load more content, but as it is not instructed in the task so i havnt done that for now
       onEndReachedThreshold={onEndReachedThreshold}
+      testID={testID}
     />
   );
 }
