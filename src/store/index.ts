@@ -1,14 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
 
-import {
-  persistStore,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
+import {persistStore} from 'redux-persist';
 
 import {pokemonApi} from '../services/network';
 import {persistedReducer} from './reducer';
