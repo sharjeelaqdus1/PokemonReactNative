@@ -4,8 +4,11 @@ import {View, Text, StyleSheet} from 'react-native';
 type DetailElementProps = {
   label: string;
   value: string | number | null | undefined | Array<any | null | undefined>;
-  list?: boolean; // Add list prop
+  list?: boolean;
 };
+
+// This common component is designed to display items on detail pages.
+// It's separated into its own component to enhance code organization and maintainability.
 
 const DetailElement: React.FC<DetailElementProps> = ({label, value, list}) => {
   return (
@@ -19,7 +22,7 @@ const DetailElement: React.FC<DetailElementProps> = ({label, value, list}) => {
             </Text>
           ))
         ) : (
-          <Text style={styles.value}>{value}</Text>
+          <Text style={styles.value}>{value ?? 'Unknown'}</Text>
         )}
       </View>
     </View>

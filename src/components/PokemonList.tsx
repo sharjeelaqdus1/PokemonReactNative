@@ -34,7 +34,7 @@ const PokemonList: React.FC<PokemonListProps> = ({
       ItemSeparatorComponent={ListSeparator}
       onEndReached={onEndReached}
       onEndReachedThreshold={onEndReachedThreshold}
-      testID="PokemonList"
+      testID="PokemonCommonList"
     />
   );
 };
