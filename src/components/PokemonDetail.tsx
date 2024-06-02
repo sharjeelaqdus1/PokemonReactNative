@@ -1,4 +1,3 @@
-// components/PokemonDetail.tsx
 import React from 'react';
 import {View, StyleSheet, Image, Text} from 'react-native';
 
@@ -8,6 +7,7 @@ import Header from './Header';
 import DetailElement from './DetailElement';
 import ShouldRender from './ShouldRender';
 import DefaultError from './DefaultError';
+import {strings} from '../constants/strings';
 
 interface PokemonDetailProps {
   pokemonId: string;
@@ -20,20 +20,16 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({pokemonId}) => {
   const {name, height, weight, types, sprites} = pokemonDetails || {};
 
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return <Text>{strings.loading}</Text>;
   }
 
   if (error) {
     if ('status' in error) {
       return <DefaultError message={error?.status} />;
     } else {
-      return <DefaultError message={'Failed to load'} />;
+      return <DefaultError message={strings.failedToLoad} />;
     }
   }
-
-  //   if (!pokemon) {
-  //     return <Text>No Pokemon data</Text>;
-  //   }
 
   return (
     <View style={styles.container}>
@@ -47,19 +43,19 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({pokemonId}) => {
         </ShouldRender>
         <ShouldRender condition={!!name}>
           <View style={styles.separator} />
-          <DetailElement label="Name" value={name} />
+          <DetailElement label={strings.name} value={name} />
         </ShouldRender>
         <ShouldRender condition={!!height}>
           <View style={styles.separator} />
-          <DetailElement label="Height" value={height + ' cm'} />
+          <DetailElement label={strings.height} value={height + ' cm'} />
         </ShouldRender>
         <ShouldRender condition={!!weight}>
           <View style={styles.separator} />
-          <DetailElement label="Weight" value={weight + ' kg'} />
+          <DetailElement label={strings.weight} value={weight + ' kg'} />
         </ShouldRender>
         <ShouldRender condition={!!weight}>
           <View style={styles.separator} />
-          <DetailElement label="Types" value={types} list={true} />
+          <DetailElement label={strings.types} value={types} list={true} />
         </ShouldRender>
       </View>
       <View style={styles.separator2} />
